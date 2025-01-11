@@ -11,3 +11,4 @@ class Tutorial(models.Model):
     name = models.CharField(max_length=70)
     author = models.CharField(max_length=30)
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='python')
+    note = models.TextField()
