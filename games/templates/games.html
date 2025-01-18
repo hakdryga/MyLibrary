@@ -5,6 +5,11 @@
     <title>Games</title>
 </head>
 <body>
-<h1>Welcome from Games template</h1>
+<h1>Games</h1>
+<p><ul>
+{% for game in games %}
+<li>{{ game }}</li>
+{% endfor %}
+</ul></p>
 </body>
 </html>

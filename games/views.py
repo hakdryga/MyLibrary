@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import Game
 
 
 def games_list(request):
-    return render(request, "games.html")
+    games = Game.objects.all()
+    return render(request, "games.html", {"games": games})
 
 
 def search_game(request):

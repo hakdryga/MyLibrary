@@ -1,15 +1,19 @@
 from django.db import models
 
 CATEGORY_CHOICES = (
-    ('python','PYTHON'),
+    ('python', 'PYTHON'),
     ('java', 'JAVA'),
-    ('aws','AWS'),
-    ('javascrit','JAVASCRIPT'),
-    ('react','REACT'),
+    ('aws', 'AWS'),
+    ('javascrit', 'JAVASCRIPT'),
+    ('react', 'REACT'),
 )
+
+
 class Tutorial(models.Model):
     name = models.CharField(max_length=70)
     author = models.CharField(max_length=30)
     category = models.CharField(max_length=30, choices=CATEGORY_CHOICES, default='python')
     note = models.TextField(blank=True)
 
+    def __str__(self):
+        return self.name

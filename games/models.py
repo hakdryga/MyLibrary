@@ -6,3 +6,6 @@ class Game(models.Model):
                             help_text="The name of the game")
     url = models.URLField(help_text="Game url")
     note = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.name

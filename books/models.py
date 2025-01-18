@@ -21,3 +21,6 @@ class Book(models.Model):
     publication_date = models.DateField(
         verbose_name="Date the book was published.", default=datetime.date.today)
     note = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.title
