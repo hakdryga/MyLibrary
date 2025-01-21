@@ -19,7 +19,7 @@ class Book(models.Model):
     author = models.CharField(max_length=20)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='kitchen')
     publication_year = models.IntegerField()
-    publishing = models.CharField(max_length=30)
+    publisher = models.CharField(max_length=30)
     note = models.TextField(blank=True)
 
     def __str__(self):
