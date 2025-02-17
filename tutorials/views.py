@@ -1,5 +1,8 @@
 from django.shortcuts import render
 
+from tutorials.models import Tutorial
+
 
 def tutorials_list(request):
-    return render(request, "tutorials.html")
+    tutorials = Tutorial.objects.all()
+    return render(request, "tutorials.html", {"tutorials": tutorials})

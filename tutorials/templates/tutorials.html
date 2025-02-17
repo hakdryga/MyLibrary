@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Tutorials</title>
-</head>
-<body>
-<h1>Welcome from Tutorials template</h1>
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% block content %}
+<ul class="list-group">
+  {% for tutorial in tutorials %}
+  <li class="list-group-item">
+      <span class="text-info">Title: </span> <span><b>{{ tutorial.name }}</b></span>
+      <br>
+      <span class="text-info">Author: </span><span class="badge badge-primary badge-pill">{{ tutorial.author }}</span>
+      <br>
+      <span class="text-info">Category: </span><span>{{ tutorial.category }}</span>
+      <br>
+      <span class="text-info">Note: </span><span>{{ tutorial.note }}</span>
+      <br>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
