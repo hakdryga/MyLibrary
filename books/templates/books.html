@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Books</title>
-</head>
-<body>
-<h1>Welcome {{ user_name }} !</h1>
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% block content %}
+<ul class="list-group">
+  {% for book in books %}
+  <li class="list-group-item">
+      <span class="text-info">Title: </span> <span><b>{{ book.title }}</b></span>
+      <br>
+      <span class="text-info">Publisher: </span><span>{{ book.publisher }}</span>
+      <br>
+      <span class="text-info">Publication Date: </span><span>{{ book.publication_year }}</span>
+      <br>
+      <span class="text-info">Author: </span><span class="badge badge-primary badge-pill">{{ book.author }}</span>
+      <br>
+      <span class="text-info">Category: </span><span>{{ book.category }}</span>
+      <br>
+      <span class="text-info">Note: </span><span>{{ book.note }}</span>
+      <br>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

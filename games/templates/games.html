@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Games</title>
-</head>
-<body>
-<h1>Games</h1>
-<p><ul>
-{% for game in games %}
-<li>{{ game }}</li>
-{% endfor %}
-</ul></p>
-</body>
-</html>
+{% extends 'index.html' %}
+
+{% block content %}
+<ul class="list-group">
+  {% for game in games %}
+  <li class="list-group-item">
+      <span class="text-info">Name: </span> <span><b>{{ game.name }}</b></span>
+      <br>
+      <span class="text-info">Url: </span> <span><a href={{ game.url }}>{{ game.url }}</a></span>
+      <br>
+      <span class="text-info">Note: </span><span>{{ game.note }}</span>
+      <br>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

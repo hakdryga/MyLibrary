@@ -1,11 +1,10 @@
 from django.shortcuts import render
+from .models import Book
 
 
 def books_list(request):
-    # user_name = request.GET.get("user_name") or "world"  # http://127.0.0.1:8000/books/?user_name=Ania
-    # return HttpResponse("Hello, {}!".format(user_name))
-    user_name = "ANIA"
-    return render(request, "books.html", {"user_name": user_name})
+    books = Book.objects.all()
+    return render(request, "books.html", {"books": books})
 
 
 def index(request):

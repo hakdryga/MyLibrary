@@ -1,7 +1,4 @@
-import datetime
-
 from django.db import models
-import datetime
 
 CATEGORY_CHOICES = (
     ('it', 'IT'),
@@ -18,8 +15,8 @@ class Book(models.Model):
     pages = models.IntegerField()
     author = models.CharField(max_length=20)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default='kitchen')
-    publication_date = models.DateField(
-        verbose_name="Date the book was published.", default=datetime.date.today)
+    publication_year = models.IntegerField()
+    publisher = models.CharField(max_length=30)
     note = models.TextField(blank=True)
 
     def __str__(self):
