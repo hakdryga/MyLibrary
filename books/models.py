@@ -1,7 +1,4 @@
-import datetime
-
 from django.db import models
-import datetime
 
 CATEGORY_CHOICES = (
     ('it', 'IT'),
